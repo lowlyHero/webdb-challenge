@@ -18,8 +18,8 @@ function findById(id) {
       .first();
   }
   
-  function add(track) {
-    return db('actions').insert(track, 'id');
+  function add(action) {
+    return db('actions').insert(action, 'id');
   }
   
   function update(id, changes) {

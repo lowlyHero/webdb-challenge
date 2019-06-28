@@ -1,12 +1,10 @@
-const express = require('express');
-
+const router = require('express').Router();
 const Action = require('./actionsModel');
-const router = express.Router();
 
 router.post('/', async (req, res) => {
     try {
-        const projs = await Action.insert(req.body);
-        res.status(201).json(projs);
+        const actions = await Action.add(req.body);
+        res.status(201).json(actions);
     } catch(error) {
         console.log(error);
         res.status(500).json({
@@ -17,9 +15,9 @@ router.post('/', async (req, res) => {
 
 router.post('/:id', async (req, res) => {
     try {
-        const projs = await Action.insert(req.body);
-        if(projs) {
-          res.status(201).json(projs);
+        const actions = await Action.add(req.body);
+        if(actions) {
+          res.status(201).json(actions);
         } else {
             res.status(404).json({
                 message: 'This project could not be found. Please try again.'
