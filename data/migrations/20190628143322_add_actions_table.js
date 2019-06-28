@@ -1,24 +1,25 @@
 exports.up = function(knex, Promise) {
-    return knex.schema.createTable('actions', table => {
-        table
-        .increments('id')
-        .unique('id')
-        .string('description')
-        .boolean('completed');
+    return knex.schema.createTable('actions', tbl => {
+        tbl.increments();
 
-        //Foreign Keys
-        table
-          .integer('action_id') 
-          .unsigned() 
-          .references('id') 
-          .inTable('projects') 
-          .onDelete('CASCADE')
-          .onUpdate('CASCADE');
-
-          table.timestamps(true, true);
-    })
+        tbl
+            .integer('project_id')
+            .notNullable()
+            .references('id')
+            .inTable('projects');
+        
+        tbl
+            .string('description')
+            .notNullable();
+        
+        tbl
+            .string('notes')
+            .notNullable();
+        
+        tbl.boolean('completed');
+    });
 };
 
 exports.down = function(knex, Promise) {
-    return knex.schema.dropTableIfExists('action');
+    return knex.schema.dropTableIfExists('actions');
 };
