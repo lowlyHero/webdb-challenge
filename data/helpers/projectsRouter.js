@@ -5,7 +5,7 @@ const Proj = require('./projectsModel');
 
 // ============ GET ================
 
-router.get('/', async (req, res) => {
+router.get('/projects', async (req, res) => {
     try {
         const projs = await Proj.find();
         if(projs) {
@@ -23,7 +23,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/:id', async (req, res) => {
+router.get('/projects/:id', async (req, res) => {
     try {
         const projs = await Proj.findById(req.params.id);
         if(projs) {
@@ -43,7 +43,7 @@ router.get('/:id', async (req, res) => {
 
 //============ POST ================
 
-router.post('/', async (req, res) => {
+router.post('/projects', async (req, res) => {
     try {
         const projs = await Proj.add(req.body);
         res.status(201).json(projs);
@@ -55,7 +55,7 @@ router.post('/', async (req, res) => {
     }
 });
 
-router.post('/:id', async (req, res) => {
+router.post('/projects/:id', async (req, res) => {
     try {
         const projs = await Proj.add(req.body);
         if(projs) {

@@ -6,6 +6,8 @@ exports.up = function(knex, Promise) {
       .string('name')
       .string('description')
       .boolean('completed');
+
+      table.timestamps(true, true);
   })
 };
 

@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const Action = require('./actionsModel');
 
-router.post('/', async (req, res) => {
+router.post('/actions', async (req, res) => {
     try {
         const actions = await Action.add(req.body);
         res.status(201).json(actions);
@@ -13,7 +13,7 @@ router.post('/', async (req, res) => {
     }
 });
 
-router.post('/:id', async (req, res) => {
+router.post('/actions/:id', async (req, res) => {
     try {
         const actions = await Action.add(req.body);
         if(actions) {

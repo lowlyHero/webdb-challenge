@@ -6,13 +6,16 @@ exports.up = function(knex, Promise) {
         .string('description')
         .boolean('completed');
 
+        //Foreign Keys
         table
           .integer('action_id') 
           .unsigned() 
           .references('id') 
-          .inTable('project') 
+          .inTable('projects') 
           .onDelete('CASCADE')
           .onUpdate('CASCADE');
+
+          table.timestamps(true, true);
     })
 };
 
