@@ -2,10 +2,9 @@ const router = require('express').Router();
 
 const Proj = require('./projectsModel');
 
-
 // ============ GET ================
 
-router.get('/projects', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const projs = await Proj.find();
         if(projs) {
@@ -23,7 +22,7 @@ router.get('/projects', async (req, res) => {
     }
 });
 
-router.get('/projects/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
     try {
         const projs = await Proj.findById(req.params.id);
         if(projs) {
@@ -43,7 +42,7 @@ router.get('/projects/:id', async (req, res) => {
 
 //============ POST ================
 
-router.post('/projects', async (req, res) => {
+router.post('/', async (req, res) => {
     try {
         const projs = await Proj.add(req.body);
         res.status(201).json(projs);
@@ -55,7 +54,7 @@ router.post('/projects', async (req, res) => {
     }
 });
 
-router.post('/projects/:id', async (req, res) => {
+router.post('/:id', async (req, res) => {
     try {
         const projs = await Proj.add(req.body);
         if(projs) {

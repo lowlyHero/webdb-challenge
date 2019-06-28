@@ -1,5 +1,5 @@
 exports.up = function(knex, Promise) {
-    return knex.schema.createTable('actions', function(table) {
+    return knex.schema.createTable('actions', table => {
         table
         .increments('id')
         .unique('id')
