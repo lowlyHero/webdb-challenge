@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/lowlyHero/webdb-challenge#readme",
   "dependencies": {
+    "dotenv": "^8.0.0",
     "express": "^4.17.1",
     "knex": "^0.19.0",
     "nodemon": "^1.19.1",
