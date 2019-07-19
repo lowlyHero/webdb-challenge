@@ -5,6 +5,7 @@ exports.up = function(knex, Promise) {
     table.string('name');
     table.string('description');
     table.boolean('is_complete');
+    table.join('actions', 'projects.id', '=', 'actions.id')
   });
 };
 
