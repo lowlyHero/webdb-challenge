@@ -1,0 +1,27 @@
+{
+  "name": "webdb-challenge",
+  "version": "1.0.0",
+  "description": "nodedb-sprint-challenge",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon indexjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lowlyHero/webdb-challenge.git"
+  },
+  "author": "Eric Nunn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lowlyHero/webdb-challenge/issues"
+  },
+  "homepage": "https://github.com/lowlyHero/webdb-challenge#readme",
+  "dependencies": {
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "knex": "^0.19.0",
+    "nodemon": "^1.19.1",
+    "sqlite3": "^4.0.9"
+  }
+}
